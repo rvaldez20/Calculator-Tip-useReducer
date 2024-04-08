@@ -4,13 +4,9 @@ import OrderContents from "./components/OrderContents"
 import OrderTotals from "./components/OrderTotals"
 import TipPorcentageForm from "./components/TipPorcentageForm"
 import { menuItems } from "./data/db"
-import useOrder from './hooks/useOrder'
 import { inicialState, orderReducer } from "./reducers/order-reducer"
 
 function App() {
-
-  const { order, tip, setTip, placeOrder } = useOrder()
-
   const [state, dispatch] = useReducer(orderReducer, inicialState)
 
   return (
@@ -51,18 +47,15 @@ function App() {
               <OrderTotals 
                 order={state.order}
                 tip={state.tip}
-                placeOrder={placeOrder}
+                dispatch={dispatch}
               />
             </>
           ): (
             <p className="text-center">La orden esta vacia</p>
           )}
           
-
         </div>
       </main>
-
-
 
     </>
   )

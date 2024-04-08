@@ -1,6 +1,6 @@
 import { Dispatch } from 'react'
 import { formatCurrency } from "../helpers"
-import { MenuItem, OrderItem } from "../types"
+import { OrderItem } from "../types"
 import { OrderActions } from '../reducers/order-reducer'
 
 type OrderContentsProps = {
