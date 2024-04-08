@@ -44,7 +44,7 @@ function App() {
               />
 
               <TipPorcentageForm 
-                setTip={setTip}
+                dispatch={dispatch}
                 tip={state.tip}
               />
               
