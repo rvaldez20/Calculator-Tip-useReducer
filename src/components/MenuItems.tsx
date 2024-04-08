@@ -5,7 +5,6 @@ import { OrderActions } from '../reducers/order-reducer'
 type MenuItemProps = {
    item:MenuItem,
    dispatch: Dispatch<OrderActions>
-   // addItem: (item:MenuItem) => void
 }
 
 export default function MenuItems({item, dispatch}:MenuItemProps) {
