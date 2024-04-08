@@ -28,7 +28,8 @@ function App() {
               <MenuItems 
                 key={item.id}
                 item={item}
-                addItem={addItem}
+                dispatch={dispatch}
+                // addItem={addItem}
               />
             ))}
           </div>
@@ -39,18 +40,18 @@ function App() {
           {order.length ? (
             <>
               <OrderContents 
-                order={order}
+                order={state.order}
                 removeItem={removeItem}
               />
 
               <TipPorcentageForm 
                 setTip={setTip}
-                tip={tip}
+                tip={state.tip}
               />
               
               <OrderTotals 
-                order={order}
-                tip={tip}
+                order={state.order}
+                tip={state.tip}
                 placeOrder={placeOrder}
               />
             </>

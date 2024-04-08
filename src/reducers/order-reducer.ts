@@ -25,8 +25,28 @@ export const orderReducer = (
    
    if(action.type === 'add-item') {
 
+      //console.log('Add-Orders')
+
+      let order: OrderItem[] = [] 
+      const itemExist = state.order.find(orderItem => orderItem.id === action.payload.item.id)
+      if(itemExist) {
+         // ya existe y ya no lo agrega
+
+         // buscamos el item seleccionado e incrementamos su quantity
+         order = state.order.map(orderItem => orderItem.id === action.payload.item.id
+            ? {...orderItem, quantity: orderItem.quantity + 1} 
+            : orderItem)
+            // setOrder(updateOrder)
+      } else {
+         // no existe y lo agrega
+         const newItem:OrderItem = {...action.payload.item, quantity: 1}
+         order = [...state.order, newItem]
+         // setOrder([...order, newItem])
+      }
+
       return {
-         ...state
+         ...state,
+         order
       }
    }
 
