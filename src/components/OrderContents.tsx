@@ -9,9 +9,6 @@ type OrderContentsProps = {
 
 export default function OrderContents({order, removeItem}:OrderContentsProps) {
 
-   console.log('xxx')
-   console.log(order)
-
   return (
     <div>
       <h2 className="font-black text-4xl">Consumo</h2>
